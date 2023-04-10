@@ -1,0 +1,97 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --green: #95DF72;
+    --yellow: #FFE66D;
+    --gray: gray;
+    --black: #202020;
+}
+body{
+    font-family: 'Arial Narrow Bold', sans-serif;
+    font-size: 62.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #202020;
+    height: 100vh;
+    width: 100%;
+}
+h1{
+    color: var(--yellow);
+    font-size: 2rem;
+}
+p{
+    color: var(--green);
+    font-size: 2rem;
+    font-weight: 600;
+}
+#principal_container{
+    border: 1px solid var(--yellow);
+    border-radius: 12px;
+    width: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form{
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+input[type="number"]{
+    font-size: 1.7rem;
+    font-weight: 600;
+    width: 145px;
+    padding-left: 1px;
+    margin-top: 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid var(--gray);
+    outline: none;
+    color: var(--green);
+}
+input[type="number"]:focus{
+    border-bottom: 2px solid var(--green);
+}
+/* hiding the numer add and substract of default number input */
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+form #calculate{
+    background-color: var(--gray);
+    border: none;
+    padding: 8px;
+    color: var(--yellow);
+    font-weight: 600;
+    font-size: 1.7rem;
+    transition: 0.8s;
+}
+form #calculate:hover{
+    background-color: var(--green);
+    color: var(--black);
+}
+#percentages_container{
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+#percentages_container p{
+    transition: 0.8s;
+    color: var(--gray);
+}
+#percentages_container p:hover{
+    color: var(--green);
+    font-style: italic;
+}
