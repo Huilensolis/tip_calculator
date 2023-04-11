@@ -61,7 +61,7 @@ input[type="number"]{
 input[type="number"]:focus{
     border-bottom: 2px solid var(--green);
 }
-/* hiding the numer add and substract of default number input */
+/* hiding the number add and subtract of default number input */
 input[type='number'] {
     -moz-appearance:textfield;
 }
