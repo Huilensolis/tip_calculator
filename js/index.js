@@ -49,7 +49,7 @@ function calculateTip(){
 
         let tipP = document.createElement('p')
         tipP.classList.add('tip_number')
-        tipP.innerHTML = tip;
+        tipP.innerHTML = `$${tip}`;
         container.appendChild(tipP)
         
         let main = document.querySelector('#principal_container')
