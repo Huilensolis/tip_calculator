@@ -8,6 +8,7 @@
     --yellow: #FFE66D;
     --gray: gray;
     --black: #202020;
+    --width: 180px;
 }
 body{
     font-family: 'Arial Narrow Bold', sans-serif;
@@ -16,8 +17,9 @@ body{
     justify-content: center;
     align-items: center;
     background-color: #202020;
-    height: 100vh;
+    height: auto;
     width: 100%;
+    padding: 40px;
 }
 h1{
     color: var(--yellow);
@@ -47,7 +49,7 @@ form{
 input[type="number"]{
     font-size: 1.7rem;
     font-weight: 600;
-    width: 145px;
+    width: 180px;
     padding-left: 1px;
     margin-top: 10px;
     background-color: transparent;
@@ -81,9 +83,11 @@ form #calculate:hover{
     color: var(--black);
 }
 #percentages_container{
+    width: var(--width);
     display: grid;
-    gap: 10px;
+    justify-items: center;
     justify-content: center;
+    gap: 10px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
 }
@@ -92,6 +96,50 @@ form #calculate:hover{
     color: var(--gray);
 }
 #percentages_container p:hover{
+    cursor: pointer;
     color: var(--green);
     font-style: italic;
+}
+
+#percentages_container .percentage_active{
+    color: var(--green);
+}
+.percentage_not_selected::after{
+    content: 'You must select a PERCENTAGE';
+    grid-column: span 2;
+    text-align: center;
+    position: relative;
+    color: red;
+    font-size: 1.1rem;
+    font-weight: 600;
+    animation: pulsating 1.5s infinite;
+}
+@keyframes pulsating{
+      0%{
+        color: transparent;
+      }
+      50% {
+        color: red; 
+      }
+      100% {
+        color: transparent;
+      }
+}
+
+.amount_not_selected::after{
+    content: 'You must select an AMOUNT';
+    grid-column: span 2;
+    text-align: center;
+    position: relative;
+    color: red;
+    font-size: 1.1rem;
+    font-weight: 600;
+    animation: pulsating 1.5s infinite;
+}
+.tip_number{
+    color: var(--green);
+}
+.old_tip{
+    color: var(--gray);
+    opacity: 70%;
 }
