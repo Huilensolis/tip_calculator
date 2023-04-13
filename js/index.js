@@ -40,20 +40,22 @@ function calculateTip(){
     }
 
     let percentageDiv = document.querySelector('.percentage_active');
-    let percentage = parseInt(percentageDiv.getAttribute('data-percentage'))
+    let percentage = parseInt(percentageDiv.id.slice(4, 6))
+    console.log('percentage: ', percentage);
     let tip = ((percentage / 100) * parseFloat(amountInput.value)).toFixed(2)
+
     function displayTip(tip){
         
         let container = document.createElement('div')
-        container.classList.add('tip_result')
+        container.classList.add('tip_result');
 
-        let tipP = document.createElement('p')
-        tipP.classList.add('tip_number')
+        let tipP = document.createElement('p');
+        tipP.classList.add('tip_number');
         tipP.innerHTML = `$${tip}`;
-        container.appendChild(tipP)
+        container.appendChild(tipP);
         
-        let main = document.querySelector('#principal_container')
-        main.appendChild(container)
+        let main = document.querySelector('#principal_container');
+        main.appendChild(container);
     }
     let isTipActive = document.querySelectorAll('.tip_number')
     if(isTipActive.length > 0){
