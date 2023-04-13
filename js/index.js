@@ -40,7 +40,7 @@ function calculateTip(){
     }
 
     let percentageDiv = document.querySelector('.percentage_active');
-    let percentage = parseInt(percentageDiv.id.slice(4, 6))
+    let percentage = parseInt(percentageDiv.innerHTML.slice(0, 2))
     console.log('percentage: ', percentage);
     let tip = ((percentage / 100) * parseFloat(amountInput.value)).toFixed(2)
 
